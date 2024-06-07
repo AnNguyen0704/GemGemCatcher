@@ -18,5 +18,8 @@ public class Mover : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float moveHorizontal = horizontalInput * speed * Time.deltaTime;
         transform.position = new Vector2(transform.position.x + moveHorizontal, transform.position.y);
+        float jumpInput = Input.GetAxis("Vertical");
+        float jump = jumpInput * speed * Time.deltaTime;
+        transform.position = new Vector2(transform.position.x , transform.position.y + jump);
     }
 }

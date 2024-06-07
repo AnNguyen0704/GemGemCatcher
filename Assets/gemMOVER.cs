@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class EVILGEM : MonoBehaviour
+public class GemMover : MonoBehaviour
 {
     public float speed = 0.1f;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -18,12 +18,12 @@ public class EVILGEM : MonoBehaviour
         transform.Translate(Vector3.down * speed * Time.deltaTime);
 
     }
-    void OnTriggerEnter2D(Collider2D other) 
+    void OnTriggerEnter2D(Collider2D other)
     {
         AudioSource audioSource = GetComponent<AudioSource>();
 
         //play âm thanh t? component ?ó
-         audioSource.Play();
+        audioSource.Play();
 
         if (other.gameObject.CompareTag("Player"))
         {
@@ -37,14 +37,14 @@ public class EVILGEM : MonoBehaviour
             {
                 ScoreManger.MinusScore(1);
             }
-            
+
 
         }
-            
         else if (other.gameObject.CompareTag("Ground"))
-        { 
+        {
             Destroy(gameObject);
         }
-    }   
-}   
-    
+
+    }
+}
+

@@ -11,6 +11,10 @@ public class ScoreManger : MonoBehaviour
     {
         score += amount; //t?ng ?i?m theo giá tr? c?a amount ???c truy?n vào t?i s? ki?n g?i AddScore
     }
+    public static void MinusScore(int amount)
+    {
+        score -= amount;
+    }
     // Start is called before the first frame update
     void start()
     {
